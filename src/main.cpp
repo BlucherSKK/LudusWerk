@@ -2,6 +2,7 @@
 #include <cstdio>
 #include <iostream>
 #include <thread>
+#include "output/lwe_output.hpp"
 
 #define TUI_CLEAR "\033[2J\033[1;1H"
 #define loop while(true)
