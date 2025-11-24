@@ -12,9 +12,9 @@ typedef std::chrono::high_resolution_clock::time_point hTimeStamp;
 
 
 class FPSctrl {
-	hTimeStamp last_frame_timestamp;
+	register hTimeStamp last_frame_timestamp;
 	hTimeStamp last_fps_check_timestamp;
-	hTimeStamp end_timestamp;
+	register hTimeStamp end_timestamp;
 	msec fps_gap;
 	uint16_t cur_fps;
 	uint16_t frame_count;
@@ -36,4 +36,7 @@ public:
 	//is false function return false.
 	bool update_frame_rate();
 	bool render_delay();
+    bool set_start_render_timestamp();
+    bool set_end_render_timestamp();
+    uint16_t get_fps();
 };

@@ -3,17 +3,18 @@
 #include <iostream>
 #include <thread>
 #include "output/lwe_output.hpp"
+#include "output/tui/lwe_tui.hpp"
 
 #define TUI_CLEAR "\033[2J\033[1;1H"
 #define loop while(true)
 #define FPS 30
 
 typedef std::chrono::milliseconds msec;
-
 typedef  struct{
     int x;
     int y;
 } resolution;
+
 
 int main() {
     std::cout << "Hello, World!" << std::endl;
@@ -27,9 +28,8 @@ int main() {
     int frame_count = 0;
     int displeylabel_fps = 0;
     auto start_fps = std::chrono::high_resolution_clock::now();
-
-
-
+    auto fdfwe = std::chrono::high_res
+        
     loop {
         if (frame_rate_gap > duration)
             std::this_thread::sleep_for(frame_rate_gap - duration);

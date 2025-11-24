@@ -20,3 +20,18 @@ bool FPSctrl::render_delay(){
     }
     return false;
 }
+
+bool FPSctrl::set_start_render_timestamp(){
+    if(last_frame_timestamp = std::chrono::high_resolution_clock::new()) return true;
+    return false;
+}
+
+bool FPSctrl::set_end_render_timestamp(){
+    if(end_timestamp = std::chrono::high_resolution_clock::new()) return true;
+    return false;
+}
+
+uint16_t FPSctrl::get_fps(){
+    
+    return cur_fps;
+}
