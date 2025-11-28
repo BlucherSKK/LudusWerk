@@ -2,13 +2,41 @@
 #include <cstdio>
 #include <iostream>
 #include <thread>
+#include "../layer/mod.hpp"
 
 #define loop while(true)
 
+typedef struct<T>{
+public:
+    T*        buff;
+    size_t    len;
+
+    uint32_t get_max_large();
+    
+}LweArray;
+
+typedef struct{
+public:
+    uint16_t    x;
+    uint16_t    y;
+
+    uint32_t get_sum()
+    
+}LweResolution;
 
 typedef std::chrono::milliseconds msec;
 typedef std::chrono::high_resolution_clock::time_point hTimeStamp;
 
+class Frame{
+private:
+    uint8_t*          buff;
+    LayerRidMethod  method;
+public:
+    Frame(LweArray<Layer> arr);
+    Frame(LweArray<Layer> arr, LweResolution force_resolution);
+
+    int displey(ostream stream);
+}
 
 
 class FPSctrl {
